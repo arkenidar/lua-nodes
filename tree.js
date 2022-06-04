@@ -2,6 +2,9 @@
 // https://medium.com/@jamesonbass/stacks-queues-depth-first-search-and-breadth-first-search-90eeafe3f6f4
 
 // https://github.com/arkenidar/lua-nodes/blob/main/tree-of-nodes.jpeg
+
+// https://github.com/arkenidar/lua-nodes
+
 var tree={
      data:1,
      sub:[
@@ -20,6 +23,7 @@ var tree={
      ]
 }
 
+// tree/BFS
 const breadthFirstSearch = rootNode => {
      
      //Set up our queue and array to track visited elements
