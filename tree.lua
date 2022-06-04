@@ -1,6 +1,7 @@
 
 -- https://medium.com/@jamesonbass/stacks-queues-depth-first-search-and-breadth-first-search-90eeafe3f6f4
 
+-- https://github.com/arkenidar/lua-nodes/blob/main/tree-of-nodes.jpeg
 tree={
 	data=1,
 	sub={
