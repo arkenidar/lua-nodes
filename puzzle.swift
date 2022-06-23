@@ -28,3 +28,24 @@ func bfsWinningMoves() -> [ShiftDirection] {
     }
     return []
 }
+
+    private func recreatePathFrom(node: Node) -> [ShiftDirection] {
+        var moves = [ShiftDirection]()
+        func getMovesFrom(node: Node) -> [ShiftDirection] {
+            if let previousMove = node.previousMove as ShiftDirection?, let previousNode = node.previousNode as Node? {
+                moves.append(previousMove)
+                return getMovesFrom(node: previousNode)
+            } else {
+                return moves
+            }
+        }
+        return getMovesFrom(node: node).reversed()
+    }
+    
+    private func getChildOfNodeAndMove(node: Node, move: ShiftDirection) -> Node {
+        let childNode = Node(grid: node.boardManager.getGridCopy(), size: node.size)
+        childNode.boardManager.shift(direction: move, delegate: nil, completionBlock: { })
+        childNode.previousMove = move
+        childNode.previousNode = node
+        return childNode
+    }
